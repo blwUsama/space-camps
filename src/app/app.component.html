@@ -13,7 +13,18 @@
     <h1><span>MKAYAHAMAT</span> <br> SPACE CAMPS</h1>
     <button id="contact-button"> Contact us </button>
 </div>
-<div id="main-attractions">
+<div #mainAttractions id="main-attractions">
+    <img *ngFor="let s of stars"
+    class="star"
+    [src]="s.src"
+    [style.position]="'absolute'"
+    [style.top]="s.top"
+    [style.left]="s.left"
+    [style.width]="s.size"
+    [style.height]="s.size"
+    [style.transform]="'rotate(' + s.rotate + ')'"
+    [style.opacity]="s.opacity"
+    alt="" />
     <div class="attraction">
         <img class="attraction-image ufo"  src="../assets/images/ufo.png" />
         <div class="attraction-text">
