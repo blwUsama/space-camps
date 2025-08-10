@@ -74,6 +74,7 @@ main
         transition: 0.3s ease-in-out
 #main-attractions
     background-color: rgb(225, 235, 255)
+    background-image: linear-gradient(black, black, purple, pink)
     display: flex
     flex-direction: column
     gap: 30px
@@ -95,7 +96,8 @@ main
             border-radius: 5vw
             position: sticky
             top: 175px
-
+        .ufo
+            animation: 0.8s infinite alternate ease-in-out ufo-movement
         .flex-parent   
             display: flex
             flex-direction: column
@@ -116,7 +118,7 @@ main
                 position: sticky
                 top:175px 
                 bottom: 100px
-                animation: 0.5s infinite alternate rocket-rotation
+                animation: 0.5s infinite alternate rotation
                 .rocket 
                     // position: sticky !important
                     // top:175px !important
@@ -224,13 +226,15 @@ main
         width: 70%
         color: black
         background-color: white
+        border-radius: 10px
         // position: absolute
         // bottom: 0
 
         padding: 0px
         border-spacing: 0px 
         .table-title
-            background-color: rgb(52, 120, 255)  
+            // background-color: rgb(52, 120, 255)  
+            background-color: transparent  
         tr            
             th
                 border-radius: 10px
@@ -250,10 +254,12 @@ main
                 text-align: left
 
         tr:nth-child(even)
-            background-color: rgb(240, 224, 255)
+            // background-color: rgb(240, 224, 255)
+            background-color: transparent
             text-align: center
         tr:nth-child(odd)
-            background-color: rgb(205, 222, 255) 
+            // background-color: rgb(205, 222, 255) 
+            background-color: transparent
             td
                 padding: 5px
                 // text-align: center  
@@ -291,7 +297,9 @@ main
         .partner-card:hover
             transform: scale(1.05)
             transition: 0.7s ease-out
-@keyframes rocket-rotation
+    #sample-schedule
+        position: relative 
+@keyframes rotation
     from
         transform: rotate(-2deg) translateX(1px)
     to      
@@ -312,3 +320,9 @@ main
         transform:  scaleX(1)
     to 
         transform:  scaleX(1.6)
+
+@keyframes ufo-movement
+    from
+        transform: rotate(-2deg) translateX(15px) translateY(-d8px)
+    to      
+        transform: rotate(2deg) translateX(-15px) translateY(8px)
