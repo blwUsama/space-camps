@@ -27,7 +27,7 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'space-camps';
   stars: Star[] = [];
   private starImages = ["../assets/images/star-blue.png", "../assets/images/star-red.png"];
-  starsCount = 500;
+  starsCount = 1000;
 
   ngOnInit(): void {
     console.log("oninit running")
@@ -61,8 +61,8 @@ export class AppComponent implements OnInit, OnDestroy {
       const sizePx = Math.round(this.rand(16, 200));
       const star: Star = {
         id: i,
-        top: `${this.rand(0, 400).toFixed(2)}vh`,
-        left: `${this.rand(0, 200).toFixed(2)}vw`,
+        top: `${this.rand(0, 320).toFixed(2)}vh`,
+        left: `${this.rand(-5, 95).toFixed(2)}vw`,
         size: `${sizePx}px`,
         rotate: `${this.rand(0, 360).toFixed(2)}deg`,
         src: this.starImages[Math.floor(this.rand(0, this.starImages.length))],
