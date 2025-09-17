@@ -1,10 +1,11 @@
 <div id="hero-section">
-    <img src="../assets/images/space-camps-hero-long.JPG" alt="Some hero image"/>
+    <img id="hero-image" src="../assets/images/space-camps-hero-long.JPG" alt="Some hero image"/>
     <h1><span>MKAYAHAMAT</span> <br> SPACE CAMPS</h1>
     <button id="contact-button"> Contact us </button>
 </div>
 <div #mainAttractions id="main-attractions">
-    <img *ngFor="let s of stars"
+    <img id="mars" src="../assets/images/mars.png" alt="Mars"/>
+    <!-- <img *ngFor="let s of stars"
     class="star"
     [src]="s.src"
     [style.position]="'absolute'"
@@ -14,7 +15,7 @@
     [style.height]="s.size"
     [style.transform]="'rotate(' + s.rotate + ')'"
     [style.opacity]="s.opacity"
-    alt="" />
+    alt="" /> -->
     <div class="attraction">
         <img class="attraction-image ufo"  src="../assets/images/ufo.png" />
         <div class="attraction-text">
