@@ -1,23 +1,10 @@
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { CardComponent } from "./components/card/card.component";
-import { CommonModule } from '@angular/common';
-
-
-interface Star {
-  id: number;
-  top: string;      // e.g. "23.5vh"
-  left: string;     // e.g. "12.3vw"
-  size: string;     // e.g. "48px"
-  rotate: string;   // e.g. "12deg"
-  src: string;      // image path or data URL
-  opacity: number;
-}
+import { Component } from '@angular/core';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CardComponent, CommonModule],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass'
 })
