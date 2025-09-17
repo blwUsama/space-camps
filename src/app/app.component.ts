@@ -27,7 +27,7 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'space-camps';
   stars: Star[] = [];
   private starImages = ["../assets/images/star-blue.png", "../assets/images/star-red.png"];
-  starsCount = 1000;
+  starsCount = 0;
 
   ngOnInit(): void {
     console.log("oninit running")
