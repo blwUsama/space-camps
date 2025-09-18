@@ -1,0 +1,45 @@
+[debug] [2025-09-18T16:45:51.429Z] ----------------------------------------------------------------------
+[debug] [2025-09-18T16:45:51.432Z] Command:       /usr/bin/node /home/alex/.npm/_npx/7750544ccf494d8b/node_modules/.bin/firebase init functions
+[debug] [2025-09-18T16:45:51.433Z] CLI Version:   14.17.0
+[debug] [2025-09-18T16:45:51.433Z] Platform:      linux
+[debug] [2025-09-18T16:45:51.433Z] Node Version:  v20.19.2
+[debug] [2025-09-18T16:45:51.434Z] Time:          Thu Sep 18 2025 05:45:51 GMT-1100 (Samoa Standard Time)
+[debug] [2025-09-18T16:45:51.434Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-09-18T16:45:51.765Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-18T16:45:51.766Z] > authorizing via signed-in user (balawiu@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/alex/Desktop/usama/space-camps
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-09-18T16:45:51.771Z] Using project from CLI flag: space-camps-dd444
+[debug] [2025-09-18T16:45:51.774Z] Checked if tokens are valid: true, expires at: 1758217500312
+[debug] [2025-09-18T16:45:51.775Z] Checked if tokens are valid: true, expires at: 1758217500312
+[debug] [2025-09-18T16:45:51.778Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/space-camps-dd444 [none]
+[debug] [2025-09-18T16:45:52.933Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/space-camps-dd444 403
+[debug] [2025-09-18T16:45:52.933Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/space-camps-dd444 {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2025-09-18T16:45:52.935Z] Request to https://firebase.googleapis.com/v1beta1/projects/space-camps-dd444 had HTTP Error: 403, The caller does not have permission
+[debug] [2025-09-18T16:45:52.936Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/space-camps-dd444 had HTTP Error: 403, The caller does not have permission
+    at responseToError (/home/alex/.npm/_npx/7750544ccf494d8b/node_modules/firebase-tools/lib/responseToError.js:52:12)
+    at RetryOperation._fn (/home/alex/.npm/_npx/7750544ccf494d8b/node_modules/firebase-tools/lib/apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project space-camps-dd444. Please make sure the project exists and your account has permission to access it.

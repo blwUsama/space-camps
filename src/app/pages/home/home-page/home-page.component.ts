@@ -2,6 +2,7 @@ import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { CardComponent } from '../../../components/card/card.component'; 
+import { Star } from '../../../interfaces/star';
 
 
 
@@ -52,13 +53,4 @@ export class HomePageComponent implements OnInit {
     }
   }
   
-}
-interface Star {
-  id: number;
-  top: string;
-  left: string;
-  size: string;
-  rotate: string;
-  src: string;
-  opacity: number;
 }

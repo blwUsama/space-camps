@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { Star } from './interfaces/star';
 
 @Component({
   selector: 'app-root',
