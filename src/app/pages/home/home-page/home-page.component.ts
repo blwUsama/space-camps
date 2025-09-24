@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { CardComponent } from '../../../components/card/card.component'; 
@@ -14,43 +14,21 @@ import { Star } from '../../../interfaces/star';
   styleUrl: './home-page.component.sass'
 })
 export class HomePageComponent implements OnInit {
-  @ViewChild('mainAttractions') mainAttractions!: ElementRef<HTMLDivElement>;
-
-  stars: Star[] = [];
-  private starImages = ['../assets/images/star-blue.png', '../assets/images/star-red.png'];
-  starsCount = 1000;
+  // @ViewChild('mainAttractions') mainAttractions!: ElementRef<HTMLDivElement>;
+  private numberOfStars = 10;
+  private stars: Star[] = [];
 
   ngOnInit(): void {
-    this.generateStars();
-    const rect = document.getElementById('main-attractions')?.getBoundingClientRect();
-    if (rect) {
-      console.log('Top Y:', rect.top);
-      console.log('Bottom Y:', rect.bottom);
-    }
+    console.log("oninit running")
+    for (let i = 0; i < this.numberOfStars; i++) {
+      const star: Star = {
+        top: Math.random() * 100,
+        left: Math.random() * 100,
+        delay: Math.random() * 5,
+        duration: 1 + Math.random() * 3}
+      this.stars.push(star);
   }
-
-  ngOnDestroy(): void {
-    // cleanup if you want
-  }
-
-  private rand(min: number, max: number) {
-    return Math.random() * (max - min) + min;
-  }
-
-  private generateStars() {
-    this.stars = [];
-    for (let i = 0; i < this.starsCount; i++) {
-      const sizePx = Math.round(this.rand(16, 200));
-      this.stars.push({
-        id: i,
-        top: `${this.rand(0, 320).toFixed(2)}vh`,
-        left: `${this.rand(-5, 95).toFixed(2)}vw`,
-        size: `${sizePx}px`,
-        rotate: `${this.rand(0, 360).toFixed(2)}deg`,
-        src: this.starImages[Math.floor(this.rand(0, this.starImages.length))],
-        opacity: this.rand(0.5, 1)
-      });
-    }
-  }
+  console.log(this.stars)
   
+}
 }
