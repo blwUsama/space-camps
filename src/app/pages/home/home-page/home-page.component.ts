@@ -18,10 +18,10 @@ export class HomePageComponent implements OnInit, OnDestroy {
   private stars: Star[] = [];
 
   ngOnInit(): void {
-    
+    console.log("home component mounted")
   }
 
   ngOnDestroy(): void {
-    
+    console.log("home component unmounted")
   }
 }
