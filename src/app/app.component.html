@@ -1,31 +1,14 @@
 <main class="main">
-  <div id="navbar">
+  <nav id="navbar">
     <img src="assets/images/logo2.png" alt="Logo" />
     <ul>
-      <li>
-        <button class="nav-btn"
-                [routerLink]="['/home']"
-                routerLinkActive="active"
-                [routerLinkActiveOptions]="{ exact: true }">
-          Home
-        </button>
-      </li>
-      <li>
-        <button class="nav-btn"
-                [routerLink]="['/about']"
-                routerLinkActive="active">
-          About
-        </button>
-      </li>
-      <li>
-        <button class="nav-btn"
-                [routerLink]="['/contact']"
-                routerLinkActive="active">
-          Contact
-        </button>
-      </li>
-    </ul>
-  </div>
+      <li class="nav-btn"> <a [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home   </a> </li>
+      <li class="nav-btn">                                             <a [routerLink]="['/about']" routerLinkActive="active">About  </a> </li>
+      <li class="nav-btn">                                             <a [routerLink]="['/gallery']" routerLinkActive="active">Gallery</a> </li>
+      <li class="nav-btn">                                             <a [routerLink]="['/contact']" routerLinkActive="active">Contact</a> </li>
 
+    </ul>
+  </nav>
+  <!-- <div class="flex-grow"></div> -->
   <router-outlet></router-outlet>
 </main>

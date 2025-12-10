@@ -1,81 +1,43 @@
-body
-    margin: 0px !important
-    padding: 0
-    font-family: Arial, sans-serif
-    display: none
-
-main
-    background-color: rgb(225, 235, 255)
-    width: 100%
-    height: 100vh
-#navbar
-    background-image:  linear-gradient(to left, rgb(52, 120, 255), rgb(124, 0, 232))
-    
-    width: 100%
-    height: 75px
-    display: flex
-    align-items: center
-    position: sticky
-    top: 0
-    z-index: 1000
-    img
-        width: 65px
-        height: 65px
-        margin-left: 20px
-        margin-right: 60px
-    ul
-          list-style-type: none
-          display: flex
-          gap: 28px
-          color: white          
-          li:hover 
-                color: rgb(36, 160, 255)
-                cursor: pointer
-                transition: 0.3s
-        
 #hero-section
     display: flex
+    flex-direction: column
+    justify-content: space-evenly
+    align-items: center
     width: 100%
-    aspect-ratio: 16 / 9
+        // aspect-ratio: 16 / 9
+    height: 100vh
     min-height: 450px
-    background-color: rgb(225, 235, 255)
-    #hero-image
-        width: 100%
-        position: relative
-        z-index: 3
-        display: block
-        width: 100%
-        height: auto
-        // object-fit: contain
-        // max-height: 70%
+    background-image: url(/assets/images/space-camps-hero.JPG)
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: left
+    position: relative
+    z-index: 1
     h1
-        // -webkit-text-stroke: 1px rgb(124, 0, 232)
-        position: absolute
-        z-index: 4
-        top: 150px
-        left: 27%
         color: white
-        font-size: 55px
+        text-shadow: 0 3px 9px rgba(0, 0, 0, 0.4)
+        font-size: 4vw
+        font-size: clamp(45px, 12vw, 100px)
         display: flex
         flex-direction: column
         align-items: center
         span
-            font-size: 85px
+            transform: scale(0.75)
     #contact-button
-        position: absolute
-        z-index: 4
-        bottom: 100px
-        right: 50%
+        // position: absolute
+        // z-index: 4
+        // bottom: 100px
+        // right: 50%
         padding: 10px 20px
-        background-color: #2318F2
+        background-color: rgb(163, 42, 5)
         color: white
         border: none
         border-radius: 5px
-        font-size: 22px
-
+        padding: 0.5em 1.5em
+        font-size: 1rem
         cursor: pointer
     #contact-button:hover
-        background-color: rgb(124, 0, 232)
+        background-color:  rgb(245, 110, 32)
         // color: black
         outline: 1px solid white
         transition: 0.3s ease-in-out
@@ -92,219 +54,117 @@ main
     justify-content: space-between
     position: relative
     overflow: clip
-    #mars
-        position: absolute
-        z-index: 0
-        width: 60%
-        top: -300px
-        right: -200px
-        opacity: 1
-        // overflow: clip
-    .asteroid-wrapper
-        position: absolute  
-        z-index: 0
-        width: 450px
-        height: auto
-    .asteroid1
-        top: 750px
-        left: 50px
-        animation: up-down-float 3s ease-in-out infinite alternate
-        .asteroid
-            width: 100%
-            height: 100%
-            animation: asteroid-rotation 75s linear infinite
-    .asteroid2
-        top: 1350px
-        right: 550px
-        animation: up-down-float 2s ease-in-out infinite alternate
-        .asteroid
-            width: 100%
-            height: 100%
-            animation: asteroid-rotation 50s linear infinite reverse
-    .asteroid3
-        top: 2200px
-        left: 30%
-        animation: up-down-float 4s ease-in-out infinite alternate
-        .asteroid
-            width: 100%
-            height: 100%
-            animation: asteroid-rotation 75s linear 2s infinite 
-    .falling-star
-        position: absolute
-        width: 10px
-        height: 10px
-        background: #fff
-        border-radius: 50%
-        box-shadow: 0 0 0 4px rgba(255,255,255,0.1),0 0 0 8px rgba(255,255,255,0.1),0 0 20px rgba(255,255,255,0.1)
-        animation: shoot-star 2s linear infinite
-    .falling-star::before
-        content:''
-        position: absolute
-        top: 50%
-        transform: translateY(-50%)
-        width: 300px
-        height: 1px
-        background: linear-gradient(90deg,#fff,transparent)
-    @function rand-between($min, $max)
-        @return $min + random($max - $min)
-    @for $i from 1 through 22
-        .star#{$i}
-            $top: rand-between(4,85) * 1%
-            $right: rand-between(2,85) * 1%
-            $animation-delay: rand-between(1, 3) * 1s
-            $animation-duration: rand-between(1, 7) * 1s
-            top: $top
-            right: $right
-            animation-delay: $animation-delay 
-            animation-duration: $animation-duration 
-
-
-    // span
-    //     position: absolute
-    //     top:50%
-    //     left:50%
-    //     width: 4px
-    //     height: 4px
-    //     background: #fff
-    //     border-radius: 50%
-    //     box-shadow: 0 0 0 4px rgba(255,255,255,0.1),0 0 0 8px rgba(255,255,255,0.1),0 0 20px rgba(255,255,255,0.1)
-    //     animation: shoot-star 3s linear infinite
-    // span::before
-    //     content:''
-    //     position: absolute
-    //     top: 50%
-    //     transform: translateY(-50%)
-    //     width: 300px
-    //     height: 1px
-    //     background: linear-gradient(90deg,#fff,transparent)
-
-    // span:nth-child(1)
-    //     top: 0
-    //     right: 300px
-    //     left: initial
-    //     animation-delay: 0s
-    //     animation-duration: 3s
-    // &:nth-child(2)
-    //     top: 0
-    //     right: 80px
-    //     left: initial
-    //     animation-delay: 0.2s
-    //     animation-duration: 3s
-
-    // &:nth-child(3)
-    //     top: 80px
-    //     right: 0px
-    //     left: initial
-    //     animation-delay: 0.4s
-    //     animation-duration: 2s
-
-    // &:nth-child(4)
-    //     top: 0
-    //     right: 180px
-    //     left: initial
-    //     animation-delay: 0.6s
-    //     animation-duration: 1.5s
-
-    // &:nth-child(5)
-    //     top: 0
-    //     right: 400px
-    //     left: initial
-    //     animation-delay: 0.8s
-    //     animation-duration: 2.5s
-
-    // &:nth-child(6)
-    //     top: 0
-    //     right: 600px
-    //     left: initial
-    //     animation-delay: 1s
-    //     animation-duration: 3s
-
-    // &:nth-child(7)
-    //     top: 300px
-    //     right: 0px
-    //     left: initial
-    //     animation-delay: 1.2s
-    //     animation-duration: 1.75s
-
-    // &:nth-child(8)
-    //     top: 0px
-    //     right: 700px
-    //     left: initial
-    //     animation-delay: 1.4s
-    //     animation-duration: 1.25s
-
-    // &:nth-child(9)
-    //     top: 0px
-    //     right: 1000px
-    //     left: initial
-    //     animation-delay: 0.75s
-    //     animation-duration: 2.25s
-
-
+    #decoration-elements
+        #mars
+            position: absolute
+            z-index: 0
+            width: 60%
+            top: -25vw
+            right: -25vw
+            opacity: 1
+            // overflow: clip
+        .asteroid-wrapper
+            position: absolute  
+            z-index: 0
+            width: 450px
+            height: auto
+        .asteroid1
+            top: 750px
+            left: 50px
+            animation: up-down-float 3s ease-in-out infinite alternate
+            .asteroid
+                width: 100%
+                height: 100%
+                animation: asteroid-rotation 75s linear infinite
+        .asteroid2
+            top: 1500px
+            right: 550px
+            animation: up-down-float 2s ease-in-out infinite alternate
+            .asteroid
+                width: 100%
+                height: 100%
+                animation: asteroid-rotation 50s linear infinite reverse
+        .asteroid3
+            top: 2000px
+            left: 30%
+            animation: up-down-float 4s ease-in-out infinite alternate
+            .asteroid
+                width: 100%
+                height: 100%
+                animation: asteroid-rotation 75s linear 2s infinite 
+        .falling-star
+            position: absolute  
+            width: 10px
+            height: 10px
+            background: #fff
+            border-radius: 50%
+            box-shadow: 0 0 0 4px rgba(255,255,255,0.1),0 0 0 8px rgba(255,255,255,0.1),0 0 20px rgba(255,255,255,0.1)
+            animation: shoot-star 2s linear infinite
+            visibility: hidden
+        .falling-star::before
+            content:''
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            width: 300px
+            height: 1px
+            background: linear-gradient(90deg,#fff,transparent)
+        @function rand-between($min, $max)
+            @return $min + random($max - $min)
+        @for $i from 1 through 22
+            .star#{$i}
+                $top: rand-between(4,85) * 1%
+                $right: rand-between(2,85) * 1%
+                $animation-delay: rand-between(1, 3) * 1s
+                $animation-duration: rand-between(1, 7) * 1s
+                top: $top
+                right: $right
+                animation-delay: $animation-delay 
+                animation-duration: $animation-duration 
     .attraction
         width: 90%
         display: flex
         justify-content: space-between
         margin-left: 5%
         margin-right: 5%
-        .attraction-image
-            width: 30vw
-            height: 30vw
-            // max-width: 200px
-            // max-height: 200px
-            margin-left: 40px
-            margin-right: 40px
-            object-fit: cover
-            border-radius: 5vw
-            position: sticky
-            top: 175px
         .ufo
+            width: 20vw
+            height: 20vw
+            position: sticky
+            top: 200px
             animation: 0.8s infinite alternate ease-in-out ufo-movement
-        .flex-parent   
-            display: flex
-            flex-direction: column
-            position: relative
-            // background-image: (url("..../..//assets//images/stars2.png"))
-            // background-repeat: repeat
-            // background-size: 50vw auto 
-            // position: sticky !important
-            // top:175px !important
-            // height: fit-content
-            // .rocket
-            .stars
-                position: absolute
-                margin:0
-                width: 100% !important
+        .rocket-sticky-wrapper
+            position: sticky
+            top: 200px
+            // width: 190px
+            // height: 190px
+            flex: 0 0 auto
+            width: clamp(190px, 30vw, 400px)
+            height: clamp(190px, 30vw, 400px)
+            
             .rocket-and-fire
-                position: relative
-                position: sticky
-                top:175px 
-                bottom: 100px
+                width: 100%
+                height: 100%
+                flex: 0 0 auto
+                display: flex
+                flex-direction: column
                 animation: 0.5s infinite alternate rotation
                 .rocket 
-                    // position: sticky !important
-                    // top:175px !important
-                    z-index:1
-                    width: 100%
-
+                    z-index:-1
+                    height: 83%
+                    flex: 0 0 auto
                 .fire 
-                    z-index:0
-                    position: absolute 
-                    top: -10px
-                    left: 0px
+                    z-index:-1
                     animation: 0.2s infinite alternate fire-scale, 0.3s infinite alternate fire-flicker
-                    width: 100%
+                    height: 17%
+                    flex: 0 0 auto
                     
-                    // max-width: 250px
-                    // max-height: 200px 
-                    
-                    // transform: translateY(5px) !important
         .attraction-text
             display: flex
             flex-direction: column
             align-items: center
             padding: 20px
-            padding-top:50px
+            // padding-top:50px
 
             *
                 margin-bottom: 30px
@@ -321,30 +181,39 @@ main
                 // bottom: 0
                 // right: 0
             h1
+                font-size: clamp(20px, 7vw, 40px)
                 color: rgb(5, 205, 255)
                 margin: 0
                 position: relative
                 z-index: 3
+                text-align: center
             h3 
+                font-size: clamp(18px, 5vw, 36x)
+                color: white
                 margin: 0
                 font-weight: 1000
                 text-wrap: nowrap
                 position: relative
                 z-index: 3
             h4
-                font-size: 19px
+                font-size: clamp(16px, 4vw, 32x)
                 margin-top: 0
                 text-align: center
                 margin-bottom: 10px
                 position: relative
                 z-index: 3
             p
+                font-size: clamp(13px, 3vw, 26px)
+                color: white
                 margin: 0
+                text-align: center
+                z-index: 3
             ul
+                margin-bottom: 160px
+                padding:0
                 list-style-type: none
                 li
                     text-align: center
-                        
 #sample-schedule::before
     content: ""
     position: absolute
@@ -355,7 +224,6 @@ main
     background-repeat: no-repeat
     filter: blur(3px)
     z-index: 0
-
 #sample-schedule
     display: flex
     flex-direction: column
@@ -365,12 +233,14 @@ main
     background-attachment: fixed
     background-size: cover
     background-repeat: no-repeat
-    height: 400px
+    // height: 400px
     position: relative
-    // p
-    //     background-color:rgb(21, 71, 172)
-    //     font-size: 20px
-    //     color: white
+    padding-bottom: 60px
+    p
+        color: white
+        z-index: 5
+        margin-top: 50px
+        text-align: center
     //     margin:0
     //     width: 70%
     //     z-index: 20
@@ -431,6 +301,9 @@ main
                 padding: 0
 #partners-section
     background-color: rgb(241, 240, 254)
+    padding-top: 100px
+    padding-bottom: 100px
+
     h1
         text-align: center
         color: black
@@ -442,22 +315,24 @@ main
         grid-template-rows: repeat(3, 1fr)
         gap: 20px
         justify-content: space-between
-        width: 80%
-        margin-left: 10%
-        margin-right: 10%
+        width: 100%
+        margin-left: 0%
+        margin-right: 0%
         .partner-card 
             width: 200px
             height: 140px
             border-radius: 20px
             display: flex
-            justify-content: center
+            justify-self: center
             align-items: center
             background-color: white
             box-shadow: 5px 5px 29px -12px #8F8F93
-            margin-left: 22%
+            // margin-left: 22%
 
             img
-                width: 130px
+                width: 60%
+                margin-left: 15%
+                margin-right: 15%
                 height: auto
         .partner-card:hover
             transform: scale(1.05)
@@ -482,6 +357,43 @@ main
         color: white
         display: inline-block
         margin-left: 15px
+
+@media only screen and (max-width: 750px) 
+    #main-attractions
+        .attraction
+            flex-direction: column
+            align-items: center
+            .ufo
+                width: 45vw
+                height: 45vw
+                // position: sticky
+                // top: 10vh
+                // align-self: flex-start
+                // z-index: -10
+                // position: absolute
+                // width: 25%
+                margin: 0
+            .attraction-text
+                width:90%
+                ul
+                    display: flex
+                    flex-direction: column
+                    gap: 90px
+        .rocket-attraction
+            flex-direction: column-reverse
+            .rocket-and-fire
+                width: 40vw
+                height: 40vw
+@media only screen and (max-width: 700px)
+    #partners-section
+        .partners-grid
+            grid-template-columns: repeat(2, 1fr)
+            grid-template-rows: repeat(4, 1fr)
+            .partner-card 
+                width: 150px
+                height: 100px
+            .partner-card:last-of-type
+                display: none
 @keyframes rotation
     from
         transform: rotate(-2deg) translateX(1px)
@@ -497,7 +409,6 @@ main
         transform: translateY(0)
     to 
         transform: translateY(-40px)
-        
 @keyframes fire-flicker
     from
         // transform: scaleX(1)
@@ -506,28 +417,30 @@ main
 
         // transform: scale(1.3)
     to      
-        opacity:0.8
+        opmediaacity:0.8
         // transform: rotate(3deg)
 @keyframes fire-scale
     from 
         transform:  scaleX(1)
     to 
         transform:  scaleX(1.6)
-
 @keyframes ufo-movement
     from
         transform: rotate(-2deg) translateX(15px) translateY(-d8px)
     to      
         transform: rotate(2deg) translateX(-15px) translateY(8px)
-
-
 @keyframes shoot-star
     0%
         transform: rotate(315deg) translateX(1500px)
         opacity: 1
+        visibility: hidden
     
-    70%
+    5%
         opacity: 1
+        visibility: visible
     100%
         transform: rotate(315deg) translateX(-2000px)
         opacity: 0
+        visibility: hidden
+
+
